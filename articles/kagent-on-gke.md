@@ -32,7 +32,7 @@ published: true
 全体の流れはざっくりこうなります。
 
 ```
-ブラウザ（chat-ui.html）
+ブラウザ
   └──→ kagent-controller（GKE内）
           └──→ BigQuery MCP（bigquery.googleapis.com/mcp）
                   └──→ Vertex AI Gemini 2.5 Flash
@@ -423,7 +423,6 @@ thelook_ecommerce の2024年月別注文数を教えて
 
 ```
 kagent-training/
-├── chat-ui.html                       # 動作確認用チャットUI（クラッシュ回避）
 ├── terraform/
 │   ├── environments/dev/              # 変数・バックエンド設定
 │   └── modules/

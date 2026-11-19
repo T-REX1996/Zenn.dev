@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" font-family="'Hiragino Sans','Yu Gothic','Meiryo',sans-serif">
+  <rect width="720" height="330" fill="#ffffff"/>
+  <text x="20" y="30" font-size="18" font-weight="bold" fill="#222">OLTP：台帳に1件書き込む</text>
+  <text x="390" y="30" font-size="18" font-weight="bold" fill="#222">OLAP：台帳を集計する</text>
+  <line x1="360" y1="15" x2="360" y2="315" stroke="#ccc" stroke-dasharray="4 4"/>
+
+  <text x="20" y="58" font-size="14" fill="#1565c0">「田中さんの注文を1件更新したい」</text>
+  <text x="390" y="58" font-size="14" fill="#2e7d32">「先月の売上をカテゴリ別に集計したい」</text>
+
+  <g font-size="12" text-anchor="middle" fill="#222">
+    <!-- 左：ヘッダ -->
+    <g fill="#eeeeee" stroke="#bdbdbd" stroke-width="1">
+      <rect x="20" y="72" width="76" height="26"/><rect x="100" y="72" width="76" height="26"/><rect x="180" y="72" width="76" height="26"/><rect x="260" y="72" width="76" height="26"/>
+    </g>
+    <text x="58" y="89">注文ID</text><text x="138" y="89">顧客</text><text x="218" y="89">カテゴリ</text><text x="298" y="89">金額</text>
+
+    <!-- 左：行 -->
+    <g fill="#fafafa" stroke="#e0e0e0" stroke-width="1">
+      <rect x="20" y="102" width="316" height="28"/>
+      <rect x="20" y="134" width="316" height="28"/>
+      <rect x="20" y="198" width="316" height="28"/>
+      <rect x="20" y="230" width="316" height="28"/>
+    </g>
+    <rect x="20" y="166" width="316" height="28" fill="#e3f2fd" stroke="#1e88e5" stroke-width="2.5"/>
+    <text x="58" y="120" fill="#999">1001</text><text x="138" y="120" fill="#999">佐藤</text><text x="218" y="120" fill="#999">本</text><text x="298" y="120" fill="#999">1,200</text>
+    <text x="58" y="152" fill="#999">1002</text><text x="138" y="152" fill="#999">鈴木</text><text x="218" y="152" fill="#999">衣類</text><text x="298" y="152" fill="#999">4,800</text>
+    <text x="58" y="184">1003</text><text x="138" y="184">田中</text><text x="218" y="184">食品</text><text x="298" y="184">980</text>
+    <text x="58" y="216" fill="#999">1004</text><text x="138" y="216" fill="#999">高橋</text><text x="218" y="216" fill="#999">本</text><text x="298" y="216" fill="#999">2,300</text>
+    <text x="58" y="248" fill="#999">1005</text><text x="138" y="248" fill="#999">伊藤</text><text x="218" y="248" fill="#999">衣類</text><text x="298" y="248" fill="#999">6,100</text>
+
+    <!-- 右：ヘッダ -->
+    <g fill="#eeeeee" stroke="#bdbdbd" stroke-width="1">
+      <rect x="390" y="72" width="76" height="26"/><rect x="470" y="72" width="76" height="26"/><rect x="550" y="72" width="76" height="26"/><rect x="630" y="72" width="76" height="26"/>
+    </g>
+    <text x="428" y="89">注文ID</text><text x="508" y="89">顧客</text><text x="588" y="89">カテゴリ</text><text x="668" y="89">金額</text>
+
+    <!-- 右：行（全体は薄く、対象列だけ強調） -->
+    <g fill="#fafafa" stroke="#e0e0e0" stroke-width="1">
+      <rect x="390" y="102" width="316" height="156"/>
+    </g>
+    <rect x="550" y="100" width="76" height="160" fill="#e8f5e9" stroke="#43a047" stroke-width="2.5"/>
+    <rect x="630" y="100" width="76" height="160" fill="#e8f5e9" stroke="#43a047" stroke-width="2.5"/>
+    <g fill="#999">
+      <text x="428" y="120">1001</text><text x="508" y="120">佐藤</text>
+      <text x="428" y="152">1002</text><text x="508" y="152">鈴木</text>
+      <text x="428" y="184">1003</text><text x="508" y="184">田中</text>
+      <text x="428" y="216">1004</text><text x="508" y="216">高橋</text>
+      <text x="428" y="248">1005</text><text x="508" y="248">伊藤</text>
+    </g>
+    <g fill="#222">
+      <text x="588" y="120">本</text><text x="668" y="120">1,200</text>
+      <text x="588" y="152">衣類</text><text x="668" y="152">4,800</text>
+      <text x="588" y="184">食品</text><text x="668" y="184">980</text>
+      <text x="588" y="216">本</text><text x="668" y="216">2,300</text>
+      <text x="588" y="248">衣類</text><text x="668" y="248">6,100</text>
+    </g>
+  </g>
+
+  <text x="20" y="285" font-size="13" fill="#1565c0">1行ぶんを素早く読み書きする</text>
+  <text x="20" y="305" font-size="13" fill="#666">→ 行指向のDBが得意</text>
+  <text x="390" y="285" font-size="13" fill="#2e7d32">大量の行から、数個の列だけを取り出して計算する</text>
+  <text x="390" y="305" font-size="13" fill="#666">→ ClickHouseが得意</text>
+</svg>

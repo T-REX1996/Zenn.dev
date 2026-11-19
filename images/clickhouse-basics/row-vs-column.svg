@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" font-family="'Hiragino Sans','Yu Gothic','Meiryo',sans-serif">
+  <rect width="720" height="340" fill="#ffffff"/>
+  <text x="20" y="30" font-size="18" font-weight="bold" fill="#222">行指向（1行ずつまとめて保存）</text>
+  <text x="400" y="30" font-size="18" font-weight="bold" fill="#222">列指向（列ごとにまとめて保存）</text>
+  <line x1="360" y1="15" x2="360" y2="320" stroke="#ccc" stroke-dasharray="4 4"/>
+
+  <!-- 行指向: 3行 x 3セル -->
+  <g font-size="14" text-anchor="middle" fill="#222">
+    <g stroke="#e57373" stroke-width="1.5" fill="#ffebee">
+      <rect x="20" y="50" width="95" height="44" rx="4"/><rect x="120" y="50" width="95" height="44" rx="4"/><rect x="220" y="50" width="95" height="44" rx="4"/>
+      <rect x="20" y="104" width="95" height="44" rx="4"/><rect x="120" y="104" width="95" height="44" rx="4"/><rect x="220" y="104" width="95" height="44" rx="4"/>
+      <rect x="20" y="158" width="95" height="44" rx="4"/><rect x="120" y="158" width="95" height="44" rx="4"/><rect x="220" y="158" width="95" height="44" rx="4"/>
+    </g>
+    <text x="67" y="78">id1</text><text x="167" y="78">name1</text><text x="267" y="78">age1</text>
+    <text x="67" y="132">id2</text><text x="167" y="132">name2</text><text x="267" y="132">age2</text>
+    <text x="67" y="186">id3</text><text x="167" y="186">name3</text><text x="267" y="186">age3</text>
+  </g>
+  <text x="20" y="235" font-size="14" fill="#c62828">avg(age) だけでも、</text>
+  <text x="20" y="257" font-size="14" fill="#c62828">id・name まで一緒にディスクから読み込む</text>
+
+  <!-- 列指向: 3列 x 3セル -->
+  <g font-size="14" text-anchor="middle" fill="#222">
+    <g stroke="#bdbdbd" stroke-width="1.5" fill="#f5f5f5">
+      <rect x="400" y="50" width="85" height="44" rx="4"/><rect x="400" y="104" width="85" height="44" rx="4"/><rect x="400" y="158" width="85" height="44" rx="4"/>
+      <rect x="495" y="50" width="85" height="44" rx="4"/><rect x="495" y="104" width="85" height="44" rx="4"/><rect x="495" y="158" width="85" height="44" rx="4"/>
+    </g>
+    <g stroke="#43a047" stroke-width="2" fill="#e8f5e9">
+      <rect x="590" y="50" width="85" height="44" rx="4"/><rect x="590" y="104" width="85" height="44" rx="4"/><rect x="590" y="158" width="85" height="44" rx="4"/>
+    </g>
+    <text x="442" y="78" fill="#888">id1</text><text x="442" y="132" fill="#888">id2</text><text x="442" y="186" fill="#888">id3</text>
+    <text x="537" y="78" fill="#888">name1</text><text x="537" y="132" fill="#888">name2</text><text x="537" y="186" fill="#888">name3</text>
+    <text x="632" y="78">age1</text><text x="632" y="132">age2</text><text x="632" y="186">age3</text>
+  </g>
+  <text x="400" y="235" font-size="14" fill="#2e7d32">avg(age) なら age 列だけ読めばOK</text>
+  <text x="400" y="257" font-size="14" fill="#2e7d32">使わない列のI/Oが発生しない</text>
+  <text x="400" y="290" font-size="13" fill="#666">同じ型・似た値が並ぶので圧縮も効きやすい</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="'Hiragino Sans','Yu Gothic','Meiryo',sans-serif">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker>
+  </defs>
+  <rect width="720" height="300" fill="#ffffff"/>
+  <text x="20" y="30" font-size="18" font-weight="bold" fill="#222">スパースインデックス：granuleごとに先頭の主キー値だけを記録</text>
+
+  <text x="20" y="75" font-size="13" fill="#666">プライマリインデックス（メモリ上）</text>
+  <g font-size="14" text-anchor="middle" fill="#222">
+    <g stroke="#8e24aa" stroke-width="1.5" fill="#f3e5f5">
+      <rect x="20" y="85" width="210" height="40" rx="4"/>
+      <rect x="250" y="85" width="210" height="40" rx="4"/>
+      <rect x="480" y="85" width="210" height="40" rx="4"/>
+    </g>
+    <text x="125" y="110">先頭値: user_id = 1</text>
+    <text x="355" y="110">先頭値: user_id = 103</text>
+    <text x="585" y="110">先頭値: user_id = 250</text>
+
+    <text x="20" y="256" font-size="13" fill="#666" text-anchor="start">下段：データ（ディスク上、8192行 = 1 granule）</text>
+    <g stroke="#bdbdbd" stroke-width="1.5" fill="#f5f5f5">
+      <rect x="20" y="185" width="210" height="50" rx="4"/>
+      <rect x="480" y="185" width="210" height="50" rx="4"/>
+    </g>
+    <rect x="250" y="185" width="210" height="50" rx="4" stroke="#e65100" stroke-width="2.5" fill="#fff3e0"/>
+    <text x="125" y="208">granule 0</text><text x="125" y="226" font-size="12" fill="#777">行 0〜8191</text>
+    <text x="355" y="208">granule 1</text><text x="355" y="226" font-size="12" fill="#e65100">行 8192〜16383</text>
+    <text x="585" y="208">granule 2</text><text x="585" y="226" font-size="12" fill="#777">行 16384〜</text>
+  </g>
+
+  <line x1="125" y1="125" x2="125" y2="185" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="355" y1="125" x2="355" y2="183" stroke="#e65100" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="585" y1="125" x2="585" y2="185" stroke="#bbb" stroke-width="1.5"/>
+
+  <text x="20" y="284" font-size="14" fill="#e65100">user_id = 120 を探す → 103 ≦ 120 ＜ 250 なので granule 1 だけ読めばよい</text>
+</svg>
